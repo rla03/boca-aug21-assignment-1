@@ -28,5 +28,13 @@ public class MyLauncher {
             age = scanner.nextInt();
         }
         System.out.println("Student name is : " +name+ " and Student age is : " +age);
+
+        // With help of age define the grade of student
+        GradeType gradeType = null;
+        try{
+            gradeType = UtilityClass.determineGradeBasedOnAge(age);;
+        }catch (AgeNotCorrectException e) {
+            System.out.println("");
+        }
     }
-}
+    }
