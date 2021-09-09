@@ -34,7 +34,20 @@ public class MyLauncher {
         try{
             gradeType = UtilityClass.determineGradeBasedOnAge(age);;
         }catch (AgeNotCorrectException e) {
-            System.out.println("");
+            System.out.println("Age has to be between 4 and 17");
         }
+        // Determining school type
+        SchoolType schoolType = null;
+        try{
+            schoolType = UtilityClass.determineSchoolBasedOnGrade(gradeType);
+        } catch (NoSchoolAvailableForThisAgeException e) {
+            System.out.println("School not found for this grade!");
+        }
+//        double feesOfStudent = 0;
+//        try{
+//            feesOfStudent = UtilityClass.determineFeesOfStudentBasedOnSchool(gradeType);
+//        } catch (NoFeesFoundForThisSchool e) {
+//            System.out.println("School not found for this grade!");
+//        }
     }
-    }
+}

@@ -3,9 +3,10 @@ package com.rajat;
 public class UtilityClass {
 
     public static GradeType determineGradeBasedOnAge(int age) throws AgeNotCorrectException{
-        System.out.println("Grade Determined! ");
+        System.out.println("Grade determining in process! ");
         switch (age) {
             case 4:
+                System.out.println("Grade will be " +GradeType.JK_GRADE);
                 return GradeType.JK_GRADE;
             case 5:
                 return GradeType.SK_GRADE;
@@ -38,9 +39,11 @@ public class UtilityClass {
         }
     }
         public static SchoolType determineSchoolBasedOnGrade (GradeType gradeType) throws NoSchoolAvailableForThisAgeException{
-            switch (gradeType){
+            System.out.println("School determining in process! ");
+        switch (gradeType){
                 case JK_GRADE:
                 case SK_GRADE:
+                   System.out.println("Welcome to "+String.valueOf(SchoolType.PRE_SCHOOL));
                     return SchoolType.PRE_SCHOOL;
                 case GRADE_1:
                 case SECOND_GRADE:
@@ -52,10 +55,36 @@ public class UtilityClass {
                     return SchoolType.MIDDLE_SCHOOL;
                 case NINTH_GRADE:
                 case TENTH_GRADE:
-                case ELEVENTH_GRADE:case TWELFTH_GRADE:
+                case ELEVENTH_GRADE: case TWELFTH_GRADE:
                     return SchoolType.HIGH_SCHOOL;
                 default:
-                    throw new NoSchoolAvailableForThisAgeException("No school availabe for this age! ");
+                    throw new NoSchoolAvailableForThisAgeException("No school available for this age! ");
             }
+
     }
+
+//    public static int determineFeesOfStudentBasedOnSchool(GradeType gradeType) {
+//        System.out.println("School determining in process! ");
+//        switch (gradeType){
+//            case JK_GRADE:
+//
+//            case SK_GRADE:
+//
+//
+//            case GRADE_1:
+//            case SECOND_GRADE:
+//            case THIRD_GRADE:
+//            case FOURTH_GRADE:
+//            case FIFTH_GRADE:
+//                return SchoolType.ELEMENTARY_SCHOOL;
+//            case SIXTH_GRADE:case SEVENTH_GRADE:case EIGHTH_GRADE:
+//                return SchoolType.MIDDLE_SCHOOL;
+//            case NINTH_GRADE:
+//            case TENTH_GRADE:
+//            case ELEVENTH_GRADE: case TWELFTH_GRADE:
+//                return SchoolType.HIGH_SCHOOL;
+//            default:
+//                throw new NoSchoolAvailableForThisAgeException("No school available for this age! ");
+//        }
+//    }
 }
