@@ -2,6 +2,11 @@ package com.rajat;
 
 public class UtilityClass {
 
+    private static School PreSchool = new PreSchool();
+    private static School HighSchool = new HighSchool();
+    private static School ElementarySchool = new ElementarySchool();
+    private static School MiddleSchool = new MiddleSchool();
+
     public static GradeType determineGradeBasedOnAge(int age) throws AgeNotCorrectException{
         System.out.println("Grade determining in process! ");
         switch (age) {
@@ -62,29 +67,18 @@ public class UtilityClass {
             }
 
     }
-
-//    public static int determineFeesOfStudentBasedOnSchool(GradeType gradeType) {
-//        System.out.println("School determining in process! ");
-//        switch (gradeType){
-//            case JK_GRADE:
-//
-//            case SK_GRADE:
-//
-//
-//            case GRADE_1:
-//            case SECOND_GRADE:
-//            case THIRD_GRADE:
-//            case FOURTH_GRADE:
-//            case FIFTH_GRADE:
-//                return SchoolType.ELEMENTARY_SCHOOL;
-//            case SIXTH_GRADE:case SEVENTH_GRADE:case EIGHTH_GRADE:
-//                return SchoolType.MIDDLE_SCHOOL;
-//            case NINTH_GRADE:
-//            case TENTH_GRADE:
-//            case ELEVENTH_GRADE: case TWELFTH_GRADE:
-//                return SchoolType.HIGH_SCHOOL;
-//            default:
-//                throw new NoSchoolAvailableForThisAgeException("No school available for this age! ");
-//        }
-//    }
+    public static School retrieveSchoolObjectBasedOnSchoolType(SchoolType schoolType) {
+        switch (schoolType) {
+            case HIGH_SCHOOL:
+                return HighSchool;
+            case ELEMENTARY_SCHOOL:
+                return ElementarySchool;
+            case MIDDLE_SCHOOL:
+                return MiddleSchool;
+            case PRE_SCHOOL:
+                return PreSchool;
+            default:
+                throw new IllegalArgumentException("wrong school type");
+        }
+    }
 }

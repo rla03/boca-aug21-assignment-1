@@ -1,8 +1,10 @@
 package com.rajat;
 
+import javax.swing.plaf.synth.SynthRadioButtonUI;
 import java.util.Scanner;
 
 public class MyLauncher {
+
     public static void main(String[] args) {
         System.out.println("*************************************");
         System.out.println("Welcome to the School Admission App!   Press X for exit!!!");
@@ -49,5 +51,8 @@ public class MyLauncher {
 //        } catch (NoFeesFoundForThisSchool e) {
 //            System.out.println("School not found for this grade!");
 //        }
+
+        Student student = new Student(name, age, gradeType);
+        School school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
     }
 }

@@ -17,6 +17,9 @@ public class Student {
         this.grade = grade;
     }
 
+    public Student(String name, Integer age, GradeType gradeType) {
+    }
+
     public String getStudentId() {
         return studentId;
     }
