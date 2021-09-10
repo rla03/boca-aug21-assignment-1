@@ -1,5 +1,11 @@
 package com.rajat;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+import java.util.Date;
 import java.util.Scanner;
 
 public class MyLauncher {
@@ -22,8 +28,40 @@ public class MyLauncher {
                 System.out.println("Enter name of student: ");
                 name = scanner.nextLine();
             }
-            System.out.println("Enter age of student :");
-            Integer age = scanner.nextInt();
+
+            int month, day, year;
+            LocalDate today = LocalDate.now();                          //Today’s date
+            System.out.println("Enter date of birth in MM/DD/YYYY format :");
+            System.out.println("Please enter your birth month (in digit)");
+            month = scanner.nextInt();
+            while(month>12){
+                System.out.println("Please enter a valid month!");
+                System.out.println("Please enter your birth month (in digit)");
+                month = scanner.nextInt();
+            }
+            System.out.println("Please enter your birth date ");
+            day = scanner.nextInt();
+            while (day>31){
+                System.out.println("Please enter a valid day!");
+                System.out.println("Please enter your birth date ");
+                day = scanner.nextInt();
+            }
+            System.out.println("Please enter your birth year ");
+            year = scanner.nextInt();
+            while (year < 2004|| year > 2017){
+                System.out.println("Please enter a valid year!");
+                System.out.println("Please enter your birth year: ");
+                day = scanner.nextInt();
+            }
+
+            LocalDate birthday = LocalDate.of(year, month, day);  //Birth date
+            Period period = Period.between(birthday, today);
+            System.out.println(period.getDays());
+            System.out.println(period.getMonths());
+            System.out.println(period.getYears());
+
+
+            Integer age = period.getYears();
 
             while (age < 4 || age > 17) {
                 System.out.println("Please enter a valid age!");
