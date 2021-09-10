@@ -1,11 +1,8 @@
 package com.rajat;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.Period;
-import java.util.Date;
 import java.util.Scanner;
 
 public class MyLauncher {
@@ -51,9 +48,8 @@ public class MyLauncher {
             while (year < 2004|| year > 2017){
                 System.out.println("Please enter a valid year!");
                 System.out.println("Please enter your birth year: ");
-                day = scanner.nextInt();
+                year = scanner.nextInt();
             }
-
             LocalDate birthday = LocalDate.of(year, month, day);  //Birth date
             Period period = Period.between(birthday, today);
             System.out.println(period.getDays());
