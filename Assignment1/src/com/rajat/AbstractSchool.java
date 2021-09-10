@@ -23,6 +23,7 @@ public abstract class  AbstractSchool implements School{
             gradeToStudentsMap.put(student.getGrade(), studentList);
         }
         System.out.println("Added student = " + student.getName() +  " into grade " + student.getGrade());
+        System.out.println("Welcome... To the school, your admission is confirmed! ");
         return student;
     }
 }
