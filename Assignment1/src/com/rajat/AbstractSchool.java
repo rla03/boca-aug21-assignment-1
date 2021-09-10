@@ -6,7 +6,7 @@ import java.util.Map;
 
 public abstract class  AbstractSchool implements School{
     @Override
-    public Student admitStudent(String name, int age, String grade) {
+    public Student admitStudent(String name, int age, GradeType grade) throws ClassFullException {
         return null;
     }
 

@@ -78,7 +78,7 @@ public class UtilityClass {
             case PRE_SCHOOL:
                 return PreSchool;
             default:
-                throw new IllegalArgumentException("wrong school type");
+                throw new IllegalArgumentException("Wrong school type");
         }
     }
 }

@@ -34,7 +34,7 @@ public class MyLauncher {
         // With help of age define the grade of student
         GradeType gradeType = null;
         try{
-            gradeType = UtilityClass.determineGradeBasedOnAge(age);;
+            gradeType = UtilityClass.determineGradeBasedOnAge(age);
         }catch (AgeNotCorrectException e) {
             System.out.println("Age has to be between 4 and 17");
         }
@@ -45,14 +45,16 @@ public class MyLauncher {
         } catch (NoSchoolAvailableForThisAgeException e) {
             System.out.println("School not found for this grade!");
         }
-//        double feesOfStudent = 0;
-//        try{
-//            feesOfStudent = UtilityClass.determineFeesOfStudentBasedOnSchool(gradeType);
-//        } catch (NoFeesFoundForThisSchool e) {
-//            System.out.println("School not found for this grade!");
-//        }
 
         Student student = new Student(name, age, gradeType);
-        School school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
+        School school = null;
+        try {
+            school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
+            school.admitStudent(name, age, gradeType);
+        } catch (ClassFullException e) {
+            System.out.println("Sorry the class for grade #" + gradeType + " is full, please try another student");
+        }
+        System.out.println("Welcome ... ");
+
     }
 }

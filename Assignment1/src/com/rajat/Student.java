@@ -2,31 +2,28 @@ package com.rajat;
 
 public class Student {
     //
-    private String studentId;
+   // private String studentId;
     private String name;
     private int age;
-    private String grade;
+    private GradeType grade;
 
     public Student() {
     }
 
-    public Student(String studentId, String name, int age, String grade) {
-        this.studentId = studentId;
+    public Student( String name, int age, GradeType grade) {
+        //this.studentId = studentId;
         this.name = name;
         this.age = age;
         this.grade = grade;
     }
 
-    public Student(String name, Integer age, GradeType gradeType) {
-    }
-
-    public String getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
+//    public String getStudentId() {
+//        return studentId;
+//    }
+//
+//    public void setStudentId(String studentId) {
+//        this.studentId = studentId;
+//    }
 
     public String getName() {
         return name;
@@ -44,18 +41,17 @@ public class Student {
         this.age = age;
     }
 
-    public String getGrade() {
+    public GradeType getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(GradeType grade) {
         this.grade = grade;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "studentId='" + studentId + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", grade='" + grade + '\'' +
