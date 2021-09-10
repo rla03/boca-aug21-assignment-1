@@ -1,6 +1,5 @@
 package com.rajat;
 
-import javax.swing.plaf.synth.SynthRadioButtonUI;
 import java.util.Scanner;
 
 public class MyLauncher {
@@ -55,6 +54,6 @@ public class MyLauncher {
         } catch (ClassFullException e) {
             System.out.println("Sorry the class for grade #" + gradeType + " is full, please try another student");
         }
-        System.out.println("Welcome... ");
+        System.out.println("Welcome... To the school, your admission is confirmed! ");
     }
 }
