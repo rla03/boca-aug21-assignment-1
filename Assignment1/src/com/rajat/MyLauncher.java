@@ -50,11 +50,11 @@ public class MyLauncher {
         School school = null;
         try {
             school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
-            school.admitStudent(name, age, gradeType);
+            school.admitStudent(student);
+            school.chargeFees(student);
         } catch (ClassFullException e) {
             System.out.println("Sorry the class for grade #" + gradeType + " is full, please try another student");
         }
-        System.out.println("Welcome ... ");
-
+        System.out.println("Welcome... ");
     }
 }
