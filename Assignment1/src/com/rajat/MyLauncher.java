@@ -31,31 +31,30 @@ public class MyLauncher {
             System.out.println("Enter date of birth in MM/DD/YYYY format :");
             System.out.println("Please enter your birth month (in digit)");
             month = scanner.nextInt();
-            while(month>12){
+            while (month > 12) {
                 System.out.println("Please enter a valid month!");
                 System.out.println("Please enter your birth month (in digit)");
                 month = scanner.nextInt();
             }
             System.out.println("Please enter your birth date ");
             day = scanner.nextInt();
-            while (day>31){
+            while (day > 31) {
                 System.out.println("Please enter a valid day!");
                 System.out.println("Please enter your birth date ");
                 day = scanner.nextInt();
             }
             System.out.println("Please enter your birth year ");
             year = scanner.nextInt();
-            while (year < 2004|| year > 2017){
+            while (year < 2004 || year > 2017) {
                 System.out.println("Please enter a valid year!");
                 System.out.println("Please enter your birth year: ");
                 year = scanner.nextInt();
             }
             LocalDate birthday = LocalDate.of(year, month, day);  //Birth date
             Period period = Period.between(birthday, today);
-            System.out.println(period.getDays());
-            System.out.println(period.getMonths());
-            System.out.println(period.getYears());
-
+//            System.out.println(period.getDays());
+//            System.out.println(period.getMonths());
+//            System.out.println(period.getYears());
 
             Integer age = period.getYears();
 
@@ -90,6 +89,6 @@ public class MyLauncher {
             } catch (ClassFullException e) {
                 System.out.println("Sorry the class for grade #" + gradeType + " is full, please try another student");
             }
-        }while (!name.equals("X") || !name.equals("x"));
+        } while (!name.equals("X") || !name.equals("x"));
     }
 }
