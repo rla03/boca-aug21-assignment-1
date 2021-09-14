@@ -1,6 +1,6 @@
-import com.rajat.GradeType;
-import com.rajat.PreSchool;
-import com.rajat.Student;
+import school.GradeType;
+import school.PreSchool;
+import school.Student;
 import org.junit.Assert;
 import org.junit.Test;
 
