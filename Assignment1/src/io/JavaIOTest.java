@@ -45,14 +45,15 @@ public class JavaIOTest {
             System.out.println("Day of week: " + dayOfWeek);
 
             System.out.println("equal or not check with Monday " + finalDay.equals(check));
+            read = br.readLine();
 
-            //if (dayOfWeek == 2) {
-                bw.write(date[1] + " " + finalDay + " " +dayOfWeek);
+            if (dayOfWeek == 2) {
+                bw.write(date[0] + " " +date[1] + " "+date[2] + " "+date[3] + " "+date[4] + " "+date[5] + " "+date[6] + " "
+                        +date[7] + " " + finalDay + " " +dayOfWeek);
                 bw.newLine();
                 System.out.println(date[1] + " " + finalDay);
-                read = br.readLine();
                 System.out.println(Arrays.toString(date));
-         //  }
+          }
         }
         bw.flush();
         bw.close();
