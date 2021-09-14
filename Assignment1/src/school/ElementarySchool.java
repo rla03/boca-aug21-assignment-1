@@ -4,6 +4,7 @@ public class ElementarySchool extends AbstractSchool{
     @Override
     public Double chargeFees(Student student) {
         double fees = 100 * 1.5;
+        fees = Math.round(fees);
         if(student.getGrade() == GradeType.GRADE_1){
             System.out.println("Fees for Grade 1 is " +fees); //150
         }else if(student.getGrade() == GradeType.SECOND_GRADE){

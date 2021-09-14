@@ -5,9 +5,13 @@ public class HighSchool extends AbstractSchool{
     public Double chargeFees(Student student){
 
         double fees9 = 100 * 2.00;
+        fees9 = Math.round(fees9);
         double fees10 = fees9 + (fees9 * 0.45);
+        fees10 = Math.round(fees10);
         double fees11 = fees10 + (fees10 * 0.45);
+        fees11 = Math.round(fees11);
         double fees12 = fees11 + (fees11 * 0.45);
+        fees12 = Math.round(fees12);
 
         if(student.getGrade() == GradeType.NINTH_GRADE){
         System.out.println("Fees for 9th Grade is "+fees9);
